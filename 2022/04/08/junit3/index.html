@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="高效测试课堂测试第一章 在JUNIT 3.X使用中,写测试方法名时一定要以 test 开头  在JUNIT 3.X使用中，所写测试类一定要继承 TestCase类   在Junit中,通常用创建一个测试用到哪三步？  步骤1、创建被测试的对象   步骤2、调用被测试的方法，输入对应的参数   步骤3、判断预期结果与真实结果是否一致   在JUNIT 3.X使用中，tearDown()这个方法的的功">
+  <meta name="description" content="Junit3.x里编写测试代码要求 在Junit3中，所有的测试类都必须extends TestCase； 在Junit3中，所有的测试方法必须以“test”开头； 测试方法三步骤   步骤1 构建对象 步骤2 调用被测试方法，并输入参数 步骤3、判断预期结果与真实结果是否一致   void setUp():每个测试方法执行之前，执行一次 void tearDown()每个测试方法执行之后，执行一">
 <meta property="og:type" content="article">
-<meta property="og:title" content="高效测试">
-<meta property="og:url" content="http://example.com/2022/04/06/gao-xiao-ce-shi/index.html">
+<meta property="og:title" content="junit3">
+<meta property="og:url" content="http://example.com/2022/04/08/junit3/index.html">
 <meta property="og:site_name" content="zuozuo">
-<meta property="og:description" content="高效测试课堂测试第一章 在JUNIT 3.X使用中,写测试方法名时一定要以 test 开头  在JUNIT 3.X使用中，所写测试类一定要继承 TestCase类   在Junit中,通常用创建一个测试用到哪三步？  步骤1、创建被测试的对象   步骤2、调用被测试的方法，输入对应的参数   步骤3、判断预期结果与真实结果是否一致   在JUNIT 3.X使用中，tearDown()这个方法的的功">
+<meta property="og:description" content="Junit3.x里编写测试代码要求 在Junit3中，所有的测试类都必须extends TestCase； 在Junit3中，所有的测试方法必须以“test”开头； 测试方法三步骤   步骤1 构建对象 步骤2 调用被测试方法，并输入参数 步骤3、判断预期结果与真实结果是否一致   void setUp():每个测试方法执行之前，执行一次 void tearDown()每个测试方法执行之后，执行一">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-04-06T10:00:57.000Z">
-<meta property="article:modified_time" content="2022-04-06T10:39:03.343Z">
+<meta property="article:published_time" content="2022-04-08T10:48:41.000Z">
+<meta property="article:modified_time" content="2022-04-08T12:19:11.188Z">
 <meta property="article:author" content="zuozuo">
-<meta property="article:tag" content="java基础">
+<meta property="article:tag" content="-高效测试">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2022/04/06/gao-xiao-ce-shi/">
+<link rel="canonical" href="http://example.com/2022/04/08/junit3/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>高效测试 | zuozuo</title>
+  <title>junit3 | zuozuo</title>
   
 
 
@@ -163,7 +163,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/06/gao-xiao-ce-shi/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/08/junit3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://tx-free-imgs.acfun.cn/content/2020_2_14/1.5816751300840628E9.png?imageslim">
@@ -176,7 +176,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          高效测试
+          junit3
         </h1>
 
         <div class="post-meta">
@@ -187,7 +187,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-04-06 18:00:57 / 修改时间：18:39:03" itemprop="dateCreated datePublished" datetime="2022-04-06T18:00:57+08:00">2022-04-06</time>
+              <time title="创建时间：2022-04-08 18:48:41 / 修改时间：20:19:11" itemprop="dateCreated datePublished" datetime="2022-04-08T18:48:41+08:00">2022-04-08</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -208,8 +208,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2022/04/06/gao-xiao-ce-shi/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/04/06/gao-xiao-ce-shi/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/04/08/junit3/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/04/08/junit3/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -224,78 +224,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="高效测试课堂测试"><a href="#高效测试课堂测试" class="headerlink" title="高效测试课堂测试"></a>高效测试课堂测试</h1><h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><ol>
-<li><p>在JUNIT 3.X使用中,写测试方法名时一定要以 test 开头</p>
-</li>
-<li><p>在JUNIT 3.X使用中，所写测试类一定要继承 TestCase类 </p>
-</li>
-<li><p>在Junit中,通常用创建一个测试用到哪三步？</p>
+        <h1 id="Junit3-x里编写测试代码"><a href="#Junit3-x里编写测试代码" class="headerlink" title="Junit3.x里编写测试代码"></a>Junit3.x里编写测试代码</h1><h2 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h2><ol>
+<li>在Junit3中，所有的测试类都必须extends TestCase；</li>
+<li>在Junit3中，所有的测试方法必须以“test”开头；</li>
+<li>测试方法三步骤</li>
+</ol>
 <ul>
-<li>步骤1、创建被测试的对象</li>
-</ul>
-<ul>
-<li>步骤2、调用被测试的方法，输入对应的参数</li>
-</ul>
-<ul>
+<li>步骤1 构建对象</li>
+<li>步骤2 调用被测试方法，并输入参数</li>
 <li>步骤3、判断预期结果与真实结果是否一致</li>
 </ul>
-</li>
-<li><p>在JUNIT 3.X使用中，tearDown()这个方法的的功能是什么?</p>
-<ul>
-<li>在每个测试方法执行之后执行，一般用于测试方法的收尾工作。</li>
-</ul>
-</li>
-<li><p>在JUNIT 3.X使用中，setUp()这个方法的功能是什么？</p>
-<ul>
-<li>每个测试方法执行之前都会执行一次，一般用了初始化工作。</li>
-</ul>
-</li>
-<li><p>@AfterClass：这个annotation 在Junit中的含意</p>
-<ul>
-<li>@AfterClass：针对所有测试，在所有测试方法执行结束后执行一次</li>
-</ul>
-<ul>
-<li>格式：@AfterClass public static  void method()</li>
-</ul>
-</li>
-<li><p>@BeforeClass：这个annotation 在Junit中的含意</p>
-<ul>
-<li>@BeforeClass：针对所有测试，在所有测试方法执行前执行一次</li>
-</ul>
-<ul>
-<li>格式：@BeforeClass public static void method()</li>
-</ul>
-</li>
-<li><p>@After 这个annotation 在Junit中的含意</p>
-<ul>
-<li>@ After：释放资源，在任何测试执行之后需要进行的收尾工作。跟3.x中的tearDown()方法具有相同功能</li>
-</ul>
-</li>
-<li><p>@Before 这个annotation 在Junit中的含意</p>
-<ul>
-<li>@Before：初始化方法，在任何一个测试执行之前必须执行的代码</li>
-</ul>
-</li>
-<li><p>@Test 这个annotation 在Junit中的含意</p>
-<ul>
-<li>用于声明测试方法</li>
-</ul>
-</li>
-</ol>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><ol>
-<li>参数化测试运行器：Parameters.class</li>
-<li>Hamcrest匹配器库中用于表示只要有一个条件成立，测试就通过的是 anyOf</li>
-<li>套件运行器: Suite.class</li>
-<li>在JUNIT 3.X使用中，写测试套件类时一定要用到如下方法；</li>
-</ol>
-<pre><code>public static  Test suite(){    ....      }
-</code></pre>
-<ol start="5">
-<li>@RunWith 这个annotation的含意<ul>
-<li>用于指定测试运行器</li>
-</ul>
-</li>
-<li>@SuiteClasses这个anotation的含意<br> * 用于把多个测试用例或测试套件组成测试套件</li>
+<ol start="4">
+<li>void setUp():每个测试方法执行之前，执行一次</li>
+<li>void tearDown()每个测试方法执行之后，执行一次</li>
 </ol>
 
     </div>
@@ -306,7 +247,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/java%E5%9F%BA%E7%A1%80/" rel="tag"># java基础</a>
+              <a href="/tags/%E9%AB%98%E6%95%88%E6%B5%8B%E8%AF%95/" rel="tag"># -高效测试</a>
           </div>
 
         
@@ -315,13 +256,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/02/21/bian-liang/" rel="prev" title="变量">
-      <i class="fa fa-chevron-left"></i> 变量
+    <a href="/2022/04/08/gao-xiao-ce-shi-ce-shi-ti/" rel="prev" title="高效测试测试题">
+      <i class="fa fa-chevron-left"></i> 高效测试测试题
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/04/08/gao-xiao-ce-shi-ce-shi-ti/" rel="next" title="高效测试测试题">
-      高效测试测试题 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -381,7 +319,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%AB%98%E6%95%88%E6%B5%8B%E8%AF%95%E8%AF%BE%E5%A0%82%E6%B5%8B%E8%AF%95"><span class="nav-number">1.</span> <span class="nav-text">高效测试课堂测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0"><span class="nav-number">1.1.</span> <span class="nav-text">第一章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0"><span class="nav-number">1.2.</span> <span class="nav-text">第二章</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Junit3-x%E9%87%8C%E7%BC%96%E5%86%99%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81"><span class="nav-number">1.</span> <span class="nav-text">Junit3.x里编写测试代码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A6%81%E6%B1%82"><span class="nav-number">1.1.</span> <span class="nav-text">要求</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -410,7 +348,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

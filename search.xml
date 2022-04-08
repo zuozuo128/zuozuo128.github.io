@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>junit3</title>
+      <link href="/2022/04/08/junit3/"/>
+      <url>/2022/04/08/junit3/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Junit3-x里编写测试代码"><a href="#Junit3-x里编写测试代码" class="headerlink" title="Junit3.x里编写测试代码"></a>Junit3.x里编写测试代码</h1><h2 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h2><ol><li>在Junit3中，所有的测试类都必须extends TestCase；</li><li>在Junit3中，所有的测试方法必须以“test”开头；</li><li>测试方法三步骤</li></ol><ul><li>步骤1 构建对象</li><li>步骤2 调用被测试方法，并输入参数</li><li>步骤3、判断预期结果与真实结果是否一致</li></ul><ol start="4"><li>void setUp():每个测试方法执行之前，执行一次</li><li>void tearDown()每个测试方法执行之后，执行一次</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> -高效测试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>高效测试测试题</title>
       <link href="/2022/04/08/gao-xiao-ce-shi-ce-shi-ti/"/>
       <url>/2022/04/08/gao-xiao-ce-shi-ce-shi-ti/</url>
@@ -20,32 +45,7 @@
       
         <tags>
             
-            <tag> java基础 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>高效测试</title>
-      <link href="/2022/04/06/gao-xiao-ce-shi/"/>
-      <url>/2022/04/06/gao-xiao-ce-shi/</url>
-      
-        <content type="html"><![CDATA[<h1 id="高效测试课堂测试"><a href="#高效测试课堂测试" class="headerlink" title="高效测试课堂测试"></a>高效测试课堂测试</h1><h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><ol><li><p>在JUNIT 3.X使用中,写测试方法名时一定要以 test 开头</p></li><li><p>在JUNIT 3.X使用中，所写测试类一定要继承 TestCase类 </p></li><li><p>在Junit中,通常用创建一个测试用到哪三步？</p><ul><li>步骤1、创建被测试的对象</li></ul><ul><li>步骤2、调用被测试的方法，输入对应的参数</li></ul><ul><li>步骤3、判断预期结果与真实结果是否一致</li></ul></li><li><p>在JUNIT 3.X使用中，tearDown()这个方法的的功能是什么?</p><ul><li>在每个测试方法执行之后执行，一般用于测试方法的收尾工作。</li></ul></li><li><p>在JUNIT 3.X使用中，setUp()这个方法的功能是什么？</p><ul><li>每个测试方法执行之前都会执行一次，一般用了初始化工作。</li></ul></li><li><p>@AfterClass：这个annotation 在Junit中的含意</p><ul><li>@AfterClass：针对所有测试，在所有测试方法执行结束后执行一次</li></ul><ul><li>格式：@AfterClass public static  void method()</li></ul></li><li><p>@BeforeClass：这个annotation 在Junit中的含意</p><ul><li>@BeforeClass：针对所有测试，在所有测试方法执行前执行一次</li></ul><ul><li>格式：@BeforeClass public static void method()</li></ul></li><li><p>@After 这个annotation 在Junit中的含意</p><ul><li>@ After：释放资源，在任何测试执行之后需要进行的收尾工作。跟3.x中的tearDown()方法具有相同功能</li></ul></li><li><p>@Before 这个annotation 在Junit中的含意</p><ul><li>@Before：初始化方法，在任何一个测试执行之前必须执行的代码</li></ul></li><li><p>@Test 这个annotation 在Junit中的含意</p><ul><li>用于声明测试方法</li></ul></li></ol><h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><ol><li>参数化测试运行器：Parameters.class</li><li>Hamcrest匹配器库中用于表示只要有一个条件成立，测试就通过的是 anyOf</li><li>套件运行器: Suite.class</li><li>在JUNIT 3.X使用中，写测试套件类时一定要用到如下方法；</li></ol><pre><code>public static  Test suite(){    ....      }</code></pre><ol start="5"><li>@RunWith 这个annotation的含意<ul><li>用于指定测试运行器</li></ul></li><li>@SuiteClasses这个anotation的含意<br> * 用于把多个测试用例或测试套件组成测试套件</li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> java </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> java基础 </tag>
+            <tag> 高效测试 </tag>
             
         </tags>
       
