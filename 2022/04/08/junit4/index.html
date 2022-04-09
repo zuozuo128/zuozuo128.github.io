@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Junit3.x里编写测试代码要求 在Junit3中，所有的测试类都必须extends TestCase； 在Junit3中，所有的测试方法必须以“test”开头； 测试方法三步骤   步骤1 构建对象 步骤2 调用被测试方法，并输入参数 步骤3、判断预期结果与真实结果是否一致   void setUp():每个测试方法执行之前，执行一次 void tearDown()每个测试方法执行之后，执行一">
+  <meta name="description" content="junit4总结 在Junit4中，有测试方法的类就是测试用例（testCase) @Test声明的方法就是测试方法 @Before：初始化方法，在任何一个测试执行之前必须执行的代码; @ After：释放资源，在任何测试执行之后需要进行的收尾工作。跟3.x中的tearDown()方法具有相同功能 @BeforeClass：针对所有测试，在所有测试方法执行前执行一次，格式：@BeforeClass">
 <meta property="og:type" content="article">
-<meta property="og:title" content="junit3">
-<meta property="og:url" content="http://example.com/2022/04/08/junit3/index.html">
+<meta property="og:title" content="junit4">
+<meta property="og:url" content="http://example.com/2022/04/08/junit4/index.html">
 <meta property="og:site_name" content="zuozuo">
-<meta property="og:description" content="Junit3.x里编写测试代码要求 在Junit3中，所有的测试类都必须extends TestCase； 在Junit3中，所有的测试方法必须以“test”开头； 测试方法三步骤   步骤1 构建对象 步骤2 调用被测试方法，并输入参数 步骤3、判断预期结果与真实结果是否一致   void setUp():每个测试方法执行之前，执行一次 void tearDown()每个测试方法执行之后，执行一">
+<meta property="og:description" content="junit4总结 在Junit4中，有测试方法的类就是测试用例（testCase) @Test声明的方法就是测试方法 @Before：初始化方法，在任何一个测试执行之前必须执行的代码; @ After：释放资源，在任何测试执行之后需要进行的收尾工作。跟3.x中的tearDown()方法具有相同功能 @BeforeClass：针对所有测试，在所有测试方法执行前执行一次，格式：@BeforeClass">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-04-08T10:48:41.000Z">
-<meta property="article:modified_time" content="2022-04-08T14:37:18.292Z">
+<meta property="article:published_time" content="2022-04-08T14:37:51.000Z">
+<meta property="article:modified_time" content="2022-04-09T17:04:06.676Z">
 <meta property="article:author" content="zuozuo">
 <meta property="article:tag" content="高效测试">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2022/04/08/junit3/">
+<link rel="canonical" href="http://example.com/2022/04/08/junit4/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>junit3 | zuozuo</title>
+  <title>junit4 | zuozuo</title>
   
 
 
@@ -163,7 +163,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/08/junit3/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/08/junit4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://tx-free-imgs.acfun.cn/content/2020_2_14/1.5816751300840628E9.png?imageslim">
@@ -176,7 +176,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          junit3
+          junit4
         </h1>
 
         <div class="post-meta">
@@ -185,10 +185,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-04-08 18:48:41 / 修改时间：22:37:18" itemprop="dateCreated datePublished" datetime="2022-04-08T18:48:41+08:00">2022-04-08</time>
+              <time title="创建时间：2022-04-08 22:37:51" itemprop="dateCreated datePublished" datetime="2022-04-08T22:37:51+08:00">2022-04-08</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-04-10 01:04:06" itemprop="dateModified" datetime="2022-04-10T01:04:06+08:00">2022-04-10</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -208,8 +214,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2022/04/08/junit3/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/04/08/junit3/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/04/08/junit4/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/04/08/junit4/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -224,22 +230,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="Junit3-x里编写测试代码"><a href="#Junit3-x里编写测试代码" class="headerlink" title="Junit3.x里编写测试代码"></a>Junit3.x里编写测试代码</h1><h2 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h2><ol>
-<li>在Junit3中，所有的测试类都必须extends TestCase；</li>
-<li>在Junit3中，所有的测试方法必须以“test”开头；</li>
-<li>测试方法三步骤</li>
+        <h1 id="junit4"><a href="#junit4" class="headerlink" title="junit4"></a>junit4</h1><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol>
+<li>在Junit4中，有测试方法的类就是测试用例（testCase)</li>
+<li>@Test声明的方法就是测试方法</li>
+<li>@Before：初始化方法，在任何一个测试执行之前必须执行的代码;</li>
+<li>@ After：释放资源，在任何测试执行之后需要进行的收尾工作。跟3.x中的tearDown()方法具有相同功能</li>
+<li>@BeforeClass：针对所有测试，在所有测试方法执行前执行一次，格式：@BeforeClass public static void method()</li>
+<li>@AfterClass：针对所有测试，在所有测试方法执行结束后执行一次，格式：@AfterClass public static  void method()</li>
+<li>@Ignore：忽略的测试方法，标注的含义就是“某些方法尚未完成，暂不参与此次测试”</li>
+<li>Junit 4 的单元测试用例执行顺序为：<br>@BeforeClass –&gt; @Before –&gt; @Test –&gt; @After –&gt; @AfterClass;</li>
+<li>每一个测试方法的调用顺序为：<br>@Before –&gt; @Test –&gt; @After</li>
 </ol>
-<ul>
-<li>步骤1 构建对象</li>
-<li>步骤2 调用被测试方法，并输入参数</li>
-<li>步骤3、判断预期结果与真实结果是否一致</li>
-</ul>
-<ol start="4">
-<li>void setUp():每个测试方法执行之前，执行一次</li>
-<li>void tearDown()每个测试方法执行之后，执行一次<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2>  对下面Caluculator进行单元测试<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">public class Calculate {</span><br><span class="line">	public int add(int a, int b) {</span><br><span class="line">		return a + b;</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">public int sub(int a, int b) {</span><br><span class="line">		return a - b;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">public int mul(int a, int b) {</span><br><span class="line">		return a * b;</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">public int div(int a, int b) {</span><br><span class="line">		return a / b;</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure></li>
-</ol>
-<p><font color="#FF0000">测试代码如下：</font></p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import org.junit.Assert;</span><br><span class="line"></span><br><span class="line">import junit.framework.TestCase;</span><br><span class="line"></span><br><span class="line">public class CalculateTestWithJunit3 extends TestCase {</span><br><span class="line">	Calculate cal;</span><br><span class="line"></span><br><span class="line">	protected void setUp() throws Exception {</span><br><span class="line">		cal = new Calculate();// 步骤1 构建对象</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">	protected void tearDown() throws Exception {</span><br><span class="line"></span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">	public void testAdd() {// 在Junit3中，所有的测试方法必须以“test"开头；</span><br><span class="line">		int result = cal.add(2, -3); // 步骤2 调用被测试方法，并输入参数</span><br><span class="line">		Assert.assertEquals("aaaa", -1, result, 0); </span><br><span class="line">		// 步骤3、判断预期结果与真实结果是否一致</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">	public void testSub() {</span><br><span class="line">		int result = cal.sub(2, -3); // 步骤2</span><br><span class="line">		Assert.assertEquals(5, result, 0); // 步骤3断言</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">	public void testMul() {</span><br><span class="line">		int result = cal.mul(2, -3); // 步骤2</span><br><span class="line">		Assert.assertEquals(-6, result, 0); // 步骤3</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">	public void testDiv() {</span><br><span class="line">		int result = cal.div(2, -3); // 步骤2</span><br><span class="line">		Assert.assertEquals(0, result, 0); // 步骤3</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">import org.junit.After;</span><br><span class="line">import org.junit.Assert;</span><br><span class="line">import org.junit.Before;</span><br><span class="line">import org.junit.Test;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class CalculateTestWithJunit4 {</span><br><span class="line">	Calculate cal;</span><br><span class="line"></span><br><span class="line">	@Before</span><br><span class="line">	public void setUp() throws Exception {</span><br><span class="line">		cal = new Calculate();// 步骤1 构建对象</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">	@After</span><br><span class="line">	public void tearDown() throws Exception {</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">	@Test</span><br><span class="line">	public void testAdd1() {</span><br><span class="line">		int result = cal.add(2, -3); // 步骤2 调用被测试方法，并输入参数</span><br><span class="line">		Assert.assertEquals(-1, result, 0); // 步骤3、判断预期结果与真实结果是否一致</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">	@Test</span><br><span class="line">	public void testAdd2() {</span><br><span class="line">		int result = cal.add(2, -3); // 步骤2 调用被测试方法，并输入参数</span><br><span class="line">		Assert.assertEquals(-1, result, 0); // 步骤3、判断预期结果与真实结果是否一致</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	@Test</span><br><span class="line">	public void testSub() {</span><br><span class="line">		int result = cal.sub(2, -3); // 步骤2 调用被测试方法，并输入参数</span><br><span class="line">		Assert.assertEquals(1, result, 0); // 步骤3、判断预期结果与真实结果是否一致</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">	@Test</span><br><span class="line">	public void testMul() {</span><br><span class="line">		int result = cal.mul(2, -3); // 步骤2 调用被测试方法，并输入参数</span><br><span class="line">		Assert.assertEquals(-6, result, 0); // 步骤3、判断预期结果与真实结果是否一致</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">	@Test</span><br><span class="line">	public void testDiv() {</span><br><span class="line">		int result = cal.div(6, 3); // 步骤2 调用被测试方法，并输入参数</span><br><span class="line">		Assert.assertEquals(2, result, 0); // 步骤3、判断预期结果与真实结果是否一致</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
     </div>
 
     
@@ -257,13 +259,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/04/08/gao-xiao-ce-shi-ce-shi-ti/" rel="prev" title="高效测试测试题">
-      <i class="fa fa-chevron-left"></i> 高效测试测试题
+    <a href="/2022/04/08/junit3/" rel="prev" title="junit3">
+      <i class="fa fa-chevron-left"></i> junit3
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/04/08/junit4/" rel="next" title="junit4">
-      junit4 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -323,7 +322,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Junit3-x%E9%87%8C%E7%BC%96%E5%86%99%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81"><span class="nav-number">1.</span> <span class="nav-text">Junit3.x里编写测试代码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A6%81%E6%B1%82"><span class="nav-number">1.1.</span> <span class="nav-text">要求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B"><span class="nav-number">1.2.</span> <span class="nav-text">示例</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#junit4"><span class="nav-number">1.</span> <span class="nav-text">junit4</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.1.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81"><span class="nav-number">1.1.1.</span> <span class="nav-text">测试代码</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
